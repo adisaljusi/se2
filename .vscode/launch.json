@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-SenfApplication<senf>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.adisaljusi.senf.SenfApplication",
+            "projectName": "senf",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

@@ -1,10 +1,10 @@
-package com.adisaljusi.senf;
+package ch.zhaw.freelance4u;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SenfApplicationTests {
+class Freelance4uApplicationTests {
 
 	@Test
 	void contextLoads() {

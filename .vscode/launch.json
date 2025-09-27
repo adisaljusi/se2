@@ -1,14 +1,12 @@
 {
-    "configurations": [
-        {
-            "type": "java",
-            "name": "Spring Boot-SenfApplication<senf>",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "mainClass": "com.adisaljusi.senf.SenfApplication",
-            "projectName": "senf",
-            "args": "",
-            "envFile": "${workspaceFolder}/.env"
-        }
-    ]
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Freelance4uApplication",
+      "request": "launch",
+      "mainClass": "ch.zhaw.freelance4u.Freelance4uApplication",
+      "projectName": "freelance4u",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
 }

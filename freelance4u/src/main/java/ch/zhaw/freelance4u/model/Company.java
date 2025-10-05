@@ -16,7 +16,7 @@ public class Company {
     @Id
     private String id;
     @NonNull
-    private final String name;
+    private String name;
     @NonNull
-    private final String email;
+    private String email;
 }

@@ -11,10 +11,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import ch.zhaw.freelance4u.model.Job;
 import ch.zhaw.freelance4u.model.JobCreateDTO;
+import ch.zhaw.freelance4u.model.JobType;
 import ch.zhaw.freelance4u.repository.JobRepository;
 
 @RestController
@@ -36,9 +38,21 @@ public class JobController {
     }
 
     @GetMapping()
-    public ResponseEntity<List<Job>> getAllJobs() {
-        List<Job> companies = jobRepository.findAll();
-        return ResponseEntity.ok(companies);
+    public ResponseEntity<List<Job>> getAllJobs(@RequestParam(required = false) Double min,
+            @RequestParam(required = false) JobType type) {
+        List<Job> jobs;
+
+        if (min != null && type != null) {
+            jobs = jobRepository.findByEarningsGreaterThanAndJobType(min, type);
+        } else if (min != null) {
+            jobs = jobRepository.findByEarningsGreaterThan(min);
+        } else if (type != null) {
+            jobs = jobRepository.findByJobType(type);
+        } else {
+            jobs = jobRepository.findAll();
+        }
+
+        return ResponseEntity.ok(jobs);
     }
 
     @GetMapping("/{id}")

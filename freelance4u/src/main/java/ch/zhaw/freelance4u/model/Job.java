@@ -25,7 +25,7 @@ public class Job {
     @NonNull
     private JobState jobState = JobState.NEW;
     @NonNull
-    private double earnings;
+    private Double earnings;
     @NonNull
     private String companyId;
 

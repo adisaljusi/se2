@@ -18,6 +18,7 @@ import ch.zhaw.freelance4u.model.Job;
 import ch.zhaw.freelance4u.model.JobCreateDTO;
 import ch.zhaw.freelance4u.model.JobType;
 import ch.zhaw.freelance4u.repository.JobRepository;
+import ch.zhaw.freelance4u.service.CompanyService;
 
 @RestController
 @RequestMapping("/api/job")
@@ -25,11 +26,19 @@ public class JobController {
     @Autowired
     JobRepository jobRepository;
 
+    @Autowired
+    CompanyService companyService;
+
     @PostMapping()
     public ResponseEntity<Job> createJob(@RequestBody JobCreateDTO fDto) {
         try {
             Job fDAO = new Job(fDto.getTitle(), fDto.getDescription(), fDto.getJobType(), fDto.getEarnings(),
                     fDto.getCompanyId());
+
+            if (!companyService.existsById(fDto.getCompanyId())) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            }
+
             Job savedJob = jobRepository.save(fDAO);
             return ResponseEntity.status(HttpStatus.CREATED).body(savedJob);
         } catch (Exception e) {

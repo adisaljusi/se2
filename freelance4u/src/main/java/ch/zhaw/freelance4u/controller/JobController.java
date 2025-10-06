@@ -9,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,23 +16,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ch.zhaw.freelance4u.model.Job;
 import ch.zhaw.freelance4u.model.JobCreateDTO;
-import ch.zhaw.freelance4u.model.JobStateChangeDTO;
 import ch.zhaw.freelance4u.model.JobType;
 import ch.zhaw.freelance4u.repository.JobRepository;
 import ch.zhaw.freelance4u.service.CompanyService;
-import ch.zhaw.freelance4u.service.JobService;
 
 @RestController
 @RequestMapping("/api/job")
 public class JobController {
     @Autowired
-    JobRepository jobRepository;
+    private JobRepository jobRepository;
 
     @Autowired
-    JobService jobService;
-
-    @Autowired
-    CompanyService companyService;
+    private CompanyService companyService;
 
     @PostMapping()
     public ResponseEntity<Job> createJob(@RequestBody JobCreateDTO fDto) {
@@ -78,17 +72,6 @@ public class JobController {
         }
 
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-    }
-
-    @PutMapping("/assign")
-    public ResponseEntity<Job> assignJob(@RequestBody JobStateChangeDTO dto) {
-        Optional<Job> job = jobService.assignJob(dto.getJobId(), dto.getFreelancerId());
-
-        if (job.isPresent()) {
-            return ResponseEntity.ok(job.get());
-
-        }
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
 
 }

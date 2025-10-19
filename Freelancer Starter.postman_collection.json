@@ -1,0 +1,292 @@
+{
+	"info": {
+		"_postman_id": "449a50ab-efba-4256-ac48-8d33eae70f56",
+		"name": "Freelancer Starter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5542375"
+	},
+	"item": [
+		{
+			"name": "/api/job",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_ROOT}}/api/job",
+					"host": [
+						"{{API_ROOT}}"
+					],
+					"path": [
+						"api",
+						"job"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/api/job",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_ROOT}}/api/job",
+							"host": [
+								"{{API_ROOT}}"
+							],
+							"path": [
+								"api",
+								"job"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"670e7654a3dc598f8398db02\",\n        \"description\": \"Design a database schema for an e-commerce platform\",\n        \"jobType\": \"OTHER\",\n        \"earnings\": 556.4,\n        \"jobState\": \"NEW\",\n        \"companyId\": \"31\",\n        \"freelancerId\": null\n    },\n    {\n        \"id\": \"670e7654a3dc598f8398db03\",\n        \"description\": \"Build a RESTful API for a blog application\",\n        \"jobType\": \"TEST\",\n        \"earnings\": 418.5,\n        \"jobState\": \"NEW\",\n        \"companyId\": \"83\",\n        \"freelancerId\": null\n    },\n    {\n        \"id\": \"670e7654a3dc598f8398db04\",\n        \"description\": \"Write unit tests for a shopping cart functionality\",\n        \"jobType\": \"REVIEW\",\n        \"earnings\": 651.5,\n        \"jobState\": \"NEW\",\n        \"companyId\": \"57\",\n        \"freelancerId\": null\n    },\n    {\n        \"id\": \"670e7654a3dc598f8398db05\",\n        \"description\": \"Design a database schema for an e-commerce platform\",\n        \"jobType\": \"REVIEW\",\n        \"earnings\": 684.2,\n        \"jobState\": \"NEW\",\n        \"companyId\": \"58\",\n        \"freelancerId\": null\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "/api/job",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"New job\",\r\n    \"description\": \"Create a job\",\r\n    \"earnings\": 150.0,\r\n    \"jobType\": \"IMPLEMENT\",\r\n    \"companyId\": \"23\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_ROOT}}/api/job",
+					"host": [
+						"{{API_ROOT}}"
+					],
+					"path": [
+						"api",
+						"job"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/api/job",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Create a job\",\r\n    \"earnings\": 150.0,\r\n    \"jobType\": \"IMPLEMENT\",\r\n    \"companyId\": \"23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_ROOT}}/api/job",
+							"host": [
+								"{{API_ROOT}}"
+							],
+							"path": [
+								"api",
+								"job"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"670e895fec58ff1f5ebe86d7\",\n    \"description\": \"Create a job\",\n    \"jobType\": \"IMPLEMENT\",\n    \"earnings\": 150.0,\n    \"jobState\": \"NEW\",\n    \"companyId\": \"23\",\n    \"freelancerId\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/company",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_ROOT}}/api/company",
+					"host": [
+						"{{API_ROOT}}"
+					],
+					"path": [
+						"api",
+						"company"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/api/company",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_ROOT}}/api/company",
+							"host": [
+								"{{API_ROOT}}"
+							],
+							"path": [
+								"api",
+								"company"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"22\",\n        \"name\": \"Yodoo\",\n        \"email\": \"fhalbordl@blogs.com\"\n    },\n    {\n        \"id\": \"23\",\n        \"name\": \"DabZ\",\n        \"email\": \"asanbrookem@about.me\"\n    },\n    {\n        \"id\": \"24\",\n        \"name\": \"Gabvine\",\n        \"email\": \"bcleynaertn@simplemachines.org\"\n    },\n    {\n        \"id\": \"25\",\n        \"name\": \"Podcat\",\n        \"email\": \"gguidinio@craigslist.org\"\n    },\n    {\n        \"id\": \"26\",\n        \"name\": \"Meezzy\",\n        \"email\": \"cmartinsonp@buzzfeed.com\"\n    },\n    {\n        \"id\": \"27\",\n        \"name\": \"Voolia\",\n        \"email\": \"celwynq@washington.edu\"\n    },\n    {\n        \"id\": \"28\",\n        \"name\": \"Linktype\",\n        \"email\": \"rpeacockr@state.tx.us\"\n    },\n    {\n        \"id\": \"29\",\n        \"name\": \"Livepath\",\n        \"email\": \"tpeoples@ask.com\"\n    },\n    {\n        \"id\": \"30\",\n        \"name\": \"Brightdog\",\n        \"email\": \"rgillebertt@noaa.gov\"\n    },\n    {\n        \"id\": \"31\",\n        \"name\": \"Talane\",\n        \"email\": \"jjoyseyu@jiathis.com\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "/api/company/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_ROOT}}/api/company/:id",
+					"host": [
+						"{{API_ROOT}}"
+					],
+					"path": [
+						"api",
+						"company",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "{{companyId}}",
+							"description": "The ID of the company"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/api/company/31",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_ROOT}}/api/company/31",
+							"host": [
+								"{{API_ROOT}}"
+							],
+							"path": [
+								"api",
+								"company",
+								"31"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"31\",\n    \"name\": \"Talane\",\n    \"email\": \"jjoyseyu@jiathis.com\"\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/company",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"My Company\",\r\n    \"email\": \"mycompany@example.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_ROOT}}/api/company",
+					"host": [
+						"{{API_ROOT}}"
+					],
+					"path": [
+						"api",
+						"company"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/api/company",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"My Company\",\r\n    \"email\": \"mycompany@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_ROOT}}/api/company",
+							"host": [
+								"{{API_ROOT}}"
+							],
+							"path": [
+								"api",
+								"company"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"670e89b9ec58ff1f5ebe86d8\",\n    \"name\": \"My Company\",\n    \"email\": \"mycompany@example.com\"\n}"
+				}
+			]
+		}
+	]
+}

@@ -6,3 +6,5 @@ Es werden zwei Rollen unterschieden:
 - **User**: Kann Jobs suchen, übernehmen und abschliessen.
 
 ![Use Case Diagram](doc/uc-diagram-drawio.svg)
+
+[Postman Collection](https://documenter.getpostman.com/view/12725148/2sB3QQK8PZ)
